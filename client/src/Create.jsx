@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import axios from 'axios'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Create() {
     const [task,setTask]= useState()
@@ -11,9 +12,9 @@ function Create() {
 
     }
   return (
-    <div>
-      <input type="text" name="" id="" placeholder='Enter Task' onChange={(e)=> setTask(e.target.value)}/>
-      <button type="button" onClick={handleAdd}>Add</button>
+    <div className='p-4'>
+      <input type="text" name="input" className='m-2' placeholder='Enter Task' onChange={(e)=> setTask(e.target.value)}/>
+      <button className='' type="button" onClick={handleAdd}>Add</button>
     </div>
   )
 }
