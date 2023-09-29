@@ -13,7 +13,7 @@ function Create() {
     }
   return (
     <div className='d-flex gap-2'>
-      <input type="text" name="input" className='form-control' placeholder='Enter Task' onChange={(e)=> setTask(e.target.value)}/>
+      <input type="text" name="input" className='form-control border border-success' placeholder='Enter Task' onChange={(e)=> setTask(e.target.value)}/>
       <button className='btn btn-secondary' type="button" onClick={handleAdd}>Add</button>
     </div>
   )
