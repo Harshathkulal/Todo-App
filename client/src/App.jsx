@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
 
   return (
-    <div className='text-center'>
+    <div className='h-100 d-flex align-items-center justify-content-center'>
       <Home/>
     </div>
   )

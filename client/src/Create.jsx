@@ -12,9 +12,9 @@ function Create() {
 
     }
   return (
-    <div className='p-4'>
-      <input type="text" name="input" className='m-2' placeholder='Enter Task' onChange={(e)=> setTask(e.target.value)}/>
-      <button className='' type="button" onClick={handleAdd}>Add</button>
+    <div className='d-flex gap-2'>
+      <input type="text" name="input" className='form-control' placeholder='Enter Task' onChange={(e)=> setTask(e.target.value)}/>
+      <button className='btn btn-secondary' type="button" onClick={handleAdd}>Add</button>
     </div>
   )
 }
