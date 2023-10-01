@@ -9,10 +9,13 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(cors());
+const DB = 'mongodb+srv://harshathmkulal:Harsha5@cluster0.vscw8kb.mongodb.net/todos?retryWrites=true&w=majority';
 
-mongoose.connect('mongodb://127.0.0.1:27017/todo-list', {
+mongoose.connect(DB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+}).then(()=>{console.log("Connected To DB")
+}).catch((err)=>{console.log(`Connection Failed to DB ${err}`)
 });
 
 app.get('/get',(req, res) => {
