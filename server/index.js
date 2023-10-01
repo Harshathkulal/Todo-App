@@ -1,11 +1,13 @@
 // server.js
+const dotenv = require('dotenv');
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const Todo=require("./Models/Todo")
 
+dotenv.config({path: './config.env'});
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
 
 app.use(express.json());
 app.use(cors(
@@ -15,7 +17,8 @@ app.use(cors(
     credentials: true,
   }
 ));
-const DB = 'mongodb+srv://harshathmkulal:Harsha5@cluster0.vscw8kb.mongodb.net/todos?retryWrites=true&w=majority';
+
+const DB = process.env.DATABASE;
 
 mongoose.connect(DB, {
   useNewUrlParser: true,
