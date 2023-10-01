@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json());
 app.use(cors(
   {
-    origin:"https://todo-app-omega-lake.vercel.app/",
+    origin:"https://todo-app-omega-lake.vercel.app",
     methods:"GET,HEAD,PUT,PATCH,POST,DELETE",
   }
 ));
