@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Create() {
     const [task,setTask]= useState()
+    axios.defaults.withCredentials=true;
     const handleAdd=() => {
         axios.post('https://todo-app-server-iota.vercel.app/add',{task:task})
         .then(result=>console.log(result))
