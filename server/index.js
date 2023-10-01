@@ -18,6 +18,10 @@ mongoose.connect(DB, {
 }).catch((err)=>{console.log(`Connection Failed to DB ${err}`)
 });
 
+app.get('/',(req,res)=>{
+  res.json(" Server Running");
+})
+
 app.get('/get',(req, res) => {
   Todo.find()
   .then(result=> res.json(result))
