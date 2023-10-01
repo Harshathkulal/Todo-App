@@ -8,7 +8,13 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+  {
+    origin:["https://todo-app-omega-lake.vercel.app/"],
+    methods:["POST","GET","PUT","DELETE"],
+    credentials:true
+  }
+));
 const DB = 'mongodb+srv://harshathmkulal:Harsha5@cluster0.vscw8kb.mongodb.net/todos?retryWrites=true&w=majority';
 
 mongoose.connect(DB, {
