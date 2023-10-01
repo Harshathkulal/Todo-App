@@ -12,6 +12,7 @@ app.use(cors(
   {
     origin:"https://todo-app-omega-lake.vercel.app",
     methods:"GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
   }
 ));
 const DB = 'mongodb+srv://harshathmkulal:Harsha5@cluster0.vscw8kb.mongodb.net/todos?retryWrites=true&w=majority';
