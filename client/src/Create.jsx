@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function Create() {
     const [task,setTask]= useState()
     const handleAdd=() => {
-        axios.post('http://localhost:3001/add',{task:task})
+        axios.post('https://todo-app-server-iota.vercel.app/add',{task:task})
         .then(result=>console.log(result))
         .then(result=>location.reload())
         .catch(err=>console.log(err))
