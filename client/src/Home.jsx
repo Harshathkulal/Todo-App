@@ -10,7 +10,7 @@ function Home() {
     axios.defaults.withCredentials=true;
 
     useEffect(()=>{
-        axios.get('https://todo-app-server-iota.vercel.app')
+        axios.get('https://todo-app-server-iota.vercel.app/')
         .then(result=>setTodos(result.data))
         .catch(err=>console.log(err))
     },[])
