@@ -14,7 +14,7 @@ function Home() {
     async function fetchTodos() {
       try {
         const response = await axios.get(
-          "https://todo-app-server-iota.vercel.app/get"
+          "https://todo-app-58xk.vercel.app/get"
         );
         setTodos(response.data);
       } catch (error) {
@@ -27,7 +27,7 @@ function Home() {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `https://todo-app-server-iota.vercel.app/delete/${id}`
+        `https://todo-app-58xk.vercel.app/delete/${id}`
       );
       setTodos((prevTodos) => prevTodos.filter((todo) => todo._id !== id));
     } catch (error) {
@@ -42,7 +42,7 @@ function Home() {
 
   const handleSaveEdit = async (id) => {
     try {
-      await axios.put(`https://todo-app-server-iota.vercel.app/update/${id}`, {
+      await axios.put(`https://todo-app-58xk.vercel.app/update/${id}`, {
         task: editedTask,
       });
       setTodos((prevTodos) =>
