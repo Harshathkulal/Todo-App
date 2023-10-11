@@ -16,7 +16,7 @@ const cache = new NodeCache({ stdTTL: 300 });
 app.use(
   cors({
     origin: ["https://todo-app-omega-lake.vercel.app", "http://localhost:5173"],
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    methods: "GET,GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
   })
 );
