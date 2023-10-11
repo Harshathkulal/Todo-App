@@ -7,6 +7,7 @@ function Home() {
     const [todos,setTodos]=useState([])
     const [editingTodoId, setEditingTodoId] = useState(null); // To keep track of the todo being edited
     const [editedTask, setEditedTask] = useState('');
+    axios.defaults.withCredentials=true;
 
     useEffect(()=>{
         axios.get('https://todo-app-server-iota.vercel.app/get')
