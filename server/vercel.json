@@ -17,11 +17,11 @@
   },
   "headers": [
     {
-      "source": "/get",  // Replace with the actual route path
+      "source": "/get",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
-          "value": "*"  // You can specify the allowed origins here
+          "value": "*"
         },
         {
           "key": "Access-Control-Allow-Methods",
