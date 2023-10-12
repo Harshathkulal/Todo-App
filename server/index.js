@@ -13,10 +13,11 @@ const PORT = process.env.PORT;
 // Create a cache with a 5-minute expiration time
 const cache = new NodeCache({ stdTTL: 300 });
 
+app.options('*', cors());
 app.use(
   cors({
     origin: ["https://todo-app-omega-lake.vercel.app", "http://localhost:5173"],
-    methods: "GET,GET,HEAD,PUT,PATCH,POST,DELETE",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
   })
 );
