@@ -1,19 +1,39 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "*.js",
-            "use": "@vercel/node"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/index.js"
-        }
-    ],
-    "env": {
-        "CORS_ALLOW_ORIGIN": "*"
+  "version": 2,
+  "builds": [
+    {
+      "src": "*.js",
+      "use": "@vercel/node"
     }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.js"
+    }
+  ],
+  "env": {
+    "CORS_ALLOW_ORIGIN": "*"
+  },
+  "headers": [
+    {
+      "source": "/get",  // Replace with the actual route path
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"  // You can specify the allowed origins here
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, PUT, DELETE"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+        }
+      ]
+    }
+  ]
 }
+
 
