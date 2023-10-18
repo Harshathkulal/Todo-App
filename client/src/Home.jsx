@@ -10,25 +10,22 @@ function Home() {
   const [editingTodoId, setEditingTodoId] = useState(null);
   const [editedTask, setEditedTask] = useState("");
 
-  useEffect(() => {
-    async function fetchTodos() {
-      try {
-        const response = await axios.get(
-          "https://todo-app-2zvd.vercel.app/get"
-        );
-        setTodos(response.data);
-      } catch (error) {
-        console.log(error);
-      }
+  async function fetchTodos() {
+    try {
+      const response = await axios.get("https://todo-app-2zvd.vercel.app/get");
+      setTodos(response.data);
+    } catch (error) {
+      console.log(error);
     }
-    fetchTodos();
+  }
+
+  useEffect(() => {
+    fetchTodos(); // Call fetchTodos when the component mounts
   }, []);
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(
-        `https://todo-app-2zvd.vercel.app/delete/${id}`
-      );
+      await axios.delete(`https://todo-app-2zvd.vercel.app/delete/${id}`);
       setTodos((prevTodos) => prevTodos.filter((todo) => todo._id !== id));
     } catch (error) {
       console.log(error);
