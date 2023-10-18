@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function Create() {
+function Create({ fetchTodos }) {
   const [task, setTask] = useState("");
   const [error, setError] = useState(null);
 
@@ -21,7 +21,8 @@ function Create() {
         setTask("");
         setError(null);
         console.log(result);
-        // You may want to trigger a refresh of the todo list here
+        // trigger a refresh of the todo list here
+        fetchTodos();
       })
       .catch((err) => {
         setError("An error occurred while adding the task.");
