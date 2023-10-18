@@ -15,7 +15,7 @@ function Create() {
     }
 
     axios
-      .post("https://todo-app-58xk.vercel.app/add", { task })
+      .post("https://todo-app-2zvd.vercel.app/add", { task })
       .then((result) => {
         // Clear the input field
         setTask("");
