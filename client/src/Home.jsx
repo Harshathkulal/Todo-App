@@ -60,7 +60,7 @@ function Home() {
   return (
     <div className="container text-center">
       <h2 className="display-5 fw-bold text-body-emphasis">Todo-List</h2>
-      <Create />
+      <Create fetchTodos={fetchTodos} />
       {todos.length === 0 ? (
         <div>
           <h2>No Records</h2>
